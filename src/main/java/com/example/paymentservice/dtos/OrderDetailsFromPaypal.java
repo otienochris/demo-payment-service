@@ -2,76 +2,24 @@ package com.example.paymentservice.dtos;
 
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public class Response{
-
-	@JsonProperty("update_time")
-	private String updateTime;
-
-	@JsonProperty("create_time")
-	private String createTime;
-
-	@JsonProperty("redirect_urls")
-	private RedirectUrls redirectUrls;
-
-	@JsonProperty("links")
-	private List<LinksItem> links;
-
-	@JsonProperty("id")
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class OrderDetailsFromPaypal {
 	private String id;
-
-	@JsonProperty("state")
-	private String state;
-
-	@JsonProperty("transactions")
-	private List<TransactionsItem> transactions;
-
-	@JsonProperty("intent")
-	private String intent;
-
-	@JsonProperty("payer")
-	private Payer payer;
-
-	@JsonProperty("cart")
 	private String cart;
-
-	public String getUpdateTime(){
-		return updateTime;
-	}
-
-	public String getCreateTime(){
-		return createTime;
-	}
-
-	public RedirectUrls getRedirectUrls(){
-		return redirectUrls;
-	}
-
-	public List<LinksItem> getLinks(){
-		return links;
-	}
-
-	public String getId(){
-		return id;
-	}
-
-	public String getState(){
-		return state;
-	}
-
-	public List<TransactionsItem> getTransactions(){
-		return transactions;
-	}
-
-	public String getIntent(){
-		return intent;
-	}
-
-	public Payer getPayer(){
-		return payer;
-	}
-
-	public String getCart(){
-		return cart;
-	}
+	private String state;
+	private String intent;
+	private String updateTime;
+	private String createTime;
+	private RedirectUrls redirectUrls;
+	private List<LinksItem> links;
+	private List<TransactionsItem> transactions;
+	private Payer payer;
 }

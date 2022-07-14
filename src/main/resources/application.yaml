@@ -1,16 +1,20 @@
 spring:
   application:
     name: demo-payment-service
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 server:
-  servlet:
-    context-path: payment-service
   port: 8080
-
+logging:
+  level:
+    web: DEBUG
 paypal:
   mode: sandbox
   redirect:
-    success: localhost:3000/checkout/payment/success
-    cancel: localhost:3000/checkout/payment/cancellation
+    return: ${PAYMENT_REVIEW_URL}
+    cancel: http://localhost:8080/paypal/payment/cancellation
+    success: http://localhost:3000/courses/checkout/success
   client:
-    id: AdKurJUPYylBhN9IVyYZwiCI8sAvQi_GJzfY0D-vUkxbsWK_E8KBLga62SHGapRlP9UrTyJhJ60IhLaf
-    secret: EOV1z2ASwXc8l-gEUA4s29JyCt3cPUZpWQp2vfDsCLcoX0zGYmfnMbvFHm35IZIZ1Vwky6aUL4DImSA_
+    id: ${CLIENT_ID}
+    secret: ${CLIENT_SECRET}

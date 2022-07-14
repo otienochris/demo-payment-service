@@ -2,14 +2,14 @@ package com.example.paymentservice.configs;
 
 import com.paypal.base.rest.APIContext;
 import com.paypal.base.rest.OAuthTokenCredential;
-import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.HashMap;
 import java.util.Map;
+
 
 /**
  * @author christopherochiengotieno@gmail.com
@@ -17,16 +17,15 @@ import java.util.Map;
  * @since Tuesday, 05/07/2022
  */
 
-@Data
 @Configuration
-@ConfigurationProperties(prefix = "paypal")
-public class PaypalConfig {
-
-    private String mode;
+@RequiredArgsConstructor
+public class PaypalBeanConfigs {
+    @Value("${paypal.client.id}")
     private String clientId;
+    @Value("${paypal.client.secret}")
     private String clientSecret;
-    public String redirectCancel;
-    public String redirectReturn;
+    @Value("${paypal.mode}")
+    private String mode;
 
     @Bean
     public Map<String, String> paypalSdkConfig() {

@@ -1,7 +1,15 @@
 package com.example.paymentservice.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class LinksItem{
 
 	@JsonProperty("method")
@@ -12,16 +20,4 @@ public class LinksItem{
 
 	@JsonProperty("href")
 	private String href;
-
-	public String getMethod(){
-		return method;
-	}
-
-	public String getRel(){
-		return rel;
-	}
-
-	public String getHref(){
-		return href;
-	}
 }

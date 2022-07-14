@@ -1,48 +1,19 @@
 package com.example.paymentservice.dtos;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public class ShippingAddress{
-
-	@JsonProperty("country_code")
-	private String countryCode;
-
-	@JsonProperty("city")
-	private String city;
-
-	@JsonProperty("state")
-	private String state;
-
-	@JsonProperty("recipient_name")
-	private String recipientName;
-
-	@JsonProperty("postal_code")
-	private String postalCode;
-
-	@JsonProperty("line1")
-	private String line1;
-
-	public String getCountryCode(){
-		return countryCode;
-	}
-
-	public String getCity(){
-		return city;
-	}
-
-	public String getState(){
-		return state;
-	}
-
-	public String getRecipientName(){
-		return recipientName;
-	}
-
-	public String getPostalCode(){
-		return postalCode;
-	}
-
-	public String getLine1(){
-		return line1;
-	}
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class ShippingAddress {
+    private String countryCode;
+    private String city;
+    private String state;
+    private String recipientName;
+    private String postalCode;
+    private String line1;
 }

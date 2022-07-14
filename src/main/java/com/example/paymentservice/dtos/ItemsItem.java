@@ -1,34 +1,17 @@
 package com.example.paymentservice.dtos;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public class ItemsItem{
-
-	@JsonProperty("quantity")
-	private String quantity;
-
-	@JsonProperty("price")
-	private String price;
-
-	@JsonProperty("name")
-	private String name;
-
-	@JsonProperty("currency")
-	private String currency;
-
-	public String getQuantity(){
-		return quantity;
-	}
-
-	public String getPrice(){
-		return price;
-	}
-
-	public String getName(){
-		return name;
-	}
-
-	public String getCurrency(){
-		return currency;
-	}
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class ItemsItem {
+    private String quantity;
+    private String price;
+    private String name;
+    private String currency;
 }

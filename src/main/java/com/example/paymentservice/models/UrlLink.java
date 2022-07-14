@@ -1,7 +1,19 @@
-package com.example.paymentservice.models;/**
-* @author christopherochiengotieno@gmail.com
-* @since Tuesday, 05/07/2022
-* @version 1.0.0
-*/
+package com.example.paymentservice.models;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/**
+ * @author christopherochiengotieno@gmail.com
+ * @version 1.0.0
+ * @since Tuesday, 05/07/2022
+ */
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class UrlLink {
+    private String link;
 }

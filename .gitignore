@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### run configs
+/.run/DemoPaymentServiceApplication.run.xml
