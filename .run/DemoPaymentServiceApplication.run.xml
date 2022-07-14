@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="DemoPaymentServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <option name="ACTIVE_PROFILES" />
+    <envs>
+      <env name="PAYMENT_REVIEW_URL" value="https://explorersanddevelopers.or.ke/courses/checkout/review" />
+      <env name="CLIENT_ID" value="AdKurJUPYylBhN9IVyYZwiCI8sAvQi_GJzfY0D-vUkxbsWK_E8KBLga62SHGapRlP9UrTyJhJ60IhLaf" />
+      <env name="CLIENT_SECRET" value="EOV1z2ASwXc8l-gEUA4s29JyCt3cPUZpWQp2vfDsCLcoX0zGYmfnMbvFHm35IZIZ1Vwky6aUL4DImSA_" />
+    </envs>
+    <module name="demo-payment-service" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.paymentservice.DemoPaymentServiceApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

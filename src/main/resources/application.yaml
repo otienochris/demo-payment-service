@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: demo-payment-service
+server:
+  servlet:
+    context-path: payment-service
+  port: 8080
+
+paypal:
+  mode: sandbox
+  redirect:
+    success: localhost:3000/checkout/payment/success
+    cancel: localhost:3000/checkout/payment/cancellation
+  client:
+    id: AdKurJUPYylBhN9IVyYZwiCI8sAvQi_GJzfY0D-vUkxbsWK_E8KBLga62SHGapRlP9UrTyJhJ60IhLaf
+    secret: EOV1z2ASwXc8l-gEUA4s29JyCt3cPUZpWQp2vfDsCLcoX0zGYmfnMbvFHm35IZIZ1Vwky6aUL4DImSA_
