@@ -6,13 +6,16 @@ spring:
       matching-strategy: ant_path_matcher
 server:
   port: 8080
+  servlet:
+    context-path: /payment-service
 logging:
   level:
     web: DEBUG
 paypal:
   mode: sandbox
   redirect:
-    return: ${PAYMENT_REVIEW_URL}
+#    return: https://explorersanddevelopers.or.ke/courses/checkout/review;CLIENT_ID=AdKurJUPYylBhN9IVyYZwiCI8sAvQi_GJzfY0D-vUkxbsWK_E8KBLga62SHGapRlP9UrTyJhJ60IhLaf;CLIENT_SECRET=EOV1z2ASwXc8l-gEUA4s29JyCt3cPUZpWQp2vfDsCLcoX0zGYmfnMbvFHm35IZIZ1Vwky6aUL4DImSA_
+    return: http://localhost:3000/courses/checkout/review?CLIENT_ID=AdKurJUPYylBhN9IVyYZwiCI8sAvQi_GJzfY0D-vUkxbsWK_E8KBLga62SHGapRlP9UrTyJhJ60IhLaf&CLIENT_SECRET=EOV1z2ASwXc8l-gEUA4s29JyCt3cPUZpWQp2vfDsCLcoX0zGYmfnMbvFHm35IZIZ1Vwky6aUL4DImSA_
     cancel: http://localhost:8080/paypal/payment/cancellation
     success: http://localhost:3000/courses/checkout/success
   client:
